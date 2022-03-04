@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="preferred_width" format="dimension|reference" />
+    <attr name="preferred_height" format="dimension|reference" />
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
+
+    </declare-styleable>
+    <attr name="ratio" format="float" />
+    <declare-styleable name="RatioViewPager">
+        <attr name="ratio" />
+    </declare-styleable>
+
+    <!--App color from server-->
+    <declare-styleable name="AppTheme">
+        <attr name="colorPrimary" format="color" />
+        <attr name="colorAccent" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomButton">
+        <attr name="btn_bg_color" format="color" />
+        <attr name="btn_text_color" format="color" />
+    </declare-styleable>
+
+    <!--CircularImageView-->
+    <declare-styleable name="CircularImageView">
+        <!-- BORDER -->
+        <attr name="civ_border" format="boolean" />
+        <attr name="civ_border_width_size" format="dimension" />
+        <attr name="civ_border_color_2" format="color" />
+        <attr name="civ_border_color_start" format="color" />
+        <attr name="civ_border_color_end" format="color" />
+        <attr name="civ_border_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <!-- CIRCLE COLOR -->
+        <attr name="civ_circle_color" format="color" />
+        <attr name="civ_circle_color_start" format="color" />
+        <attr name="civ_circle_color_end" format="color" />
+        <attr name="civ_circle_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <!-- SHADOW -->
+        <attr name="civ_shadow" format="boolean" />
+        <attr name="civ_shadow_color" format="color" />
+        <attr name="civ_shadow_radius" format="float" />
+        <attr name="civ_shadow_gravity">
+            <flag name="center" value="1" />
+            <flag name="top" value="2" />
+            <flag name="bottom" value="3" />
+            <flag name="start" value="4" />
+            <flag name="end" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <!--Facebook fresco-->
+    <declare-styleable name="GenericDraweeHierarchy">
+
+        <!-- NOTE: If adding a new attr here, also add to SimpleDraweeView below -->
+        <eat-comment />
+
+        <!-- Fade duration in milliseconds. -->
+        <attr name="fadeDuration" format="integer"/>
+
+        <!-- Aspect ratio (width / height) of the view, not necessarily of the images. -->
+        <attr name="viewAspectRatio" format="float"/>
+
+        <!-- Image branches -
+        Scale-type values must match those in GenericDraweeHierarchyInflater.getScaleTypeFromXml.
+        (GenericDraweeHierarchyInflater.java).
+        For drawables that should not be scaled, such as those with the android:tileMode
+        attribute set, use the value 'none'. -->
+
+        <!-- A drawable or color to be be used as a placeholder. -->
+        <attr name="placeholderImage" format="reference"/>
+        <!-- Scale type of the placeholder image. Ignored if placeholderImage is not specified. -->
+        <attr name="placeholderImageScaleType">
+            <enum name="none" value="-1" />
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerInside" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="focusCrop" value="7" />
+            <enum name="fitBottomStart" value="8" />
+        </attr>
+
+        <!-- A drawable to be be used as a retry image. -->
+        <attr name="retryImage" format="reference"/>
+        <!-- Scale type of the retry image. Ignored if retryImage is not specified. -->
+        <attr name="retryImageScaleType">
+            <enum name="none" value="-1" />
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerInside" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="focusCrop" value="7" />
+            <enum name="fitBottomStart" value="8" />
+        </attr>
+
+        <!-- A drawable to be be used as a failure image. -->
+        <attr name="failureImage" format="reference"/>
+        <!-- Scale type of the failure image. Ignored if failureImage is not specified. -->
+        <attr name="failureImageScaleType">
+            <enum name="none" value="-1" />
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerInside" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="focusCrop" value="7" />
+            <enum name="fitBottomStart" value="8" />
+        </attr>
+
+        <!-- A drawable to be be used as a progress bar. -->
+        <attr name="progressBarImage" format="reference"/>
+        <!-- Scale type of the progress bar. Ignored if progressBarImage is not specified. -->
+        <attr name="progressBarImageScaleType">
+            <enum name="none" value="-1" />
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerInside" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="focusCrop" value="7" />
+            <enum name="fitBottomStart" value="8" />
+        </attr>
+        <!-- Progress bar Auto Rotate interval in milliseconds -->
+        <attr name="progressBarAutoRotateInterval" format="integer"/>
+
+        <!-- Scale type of the actual image. -->
+        <attr name="actualImageScaleType">
+            <enum name="none" value="-1" />
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerInside" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="focusCrop" value="7" />
+            <enum name="fitBottomStart" value="8" />
+        </attr>
+
+        <!-- A drawable or color to be used as a background. -->
+        <attr name="backgroundImage" format="reference"/>
+
+        <!-- A drawable or color to be used as an overlay. -->
+        <attr name="overlayImage" format="reference"/>
+
+        <!-- A drawable or color to be used as a pressed-state-overlay -->
+        <attr name="pressedStateOverlayImage" format="reference"/>
+
+        <!-- Rounding params -
+        Declares attributes for rounding shape, mode and border. -->
+
+        <!-- Round as circle. -->
+        <attr name="roundAsCircle" format="boolean"/>
+        <!-- Rounded corner radius. Ignored if roundAsCircle is used. -->
+        <attr name="roundedCornerRadius" format="dimension"/>
+        <!-- Round the top-left corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopLeft" format="boolean"/>
+        <!-- Round the top-right corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopRight" format="boolean"/>
+        <!-- Round the bottom-right corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomRight" format="boolean"/>
+        <!-- Round the bottom-left corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomLeft" format="boolean"/>
+        <!-- Round the top-start edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopStart" format="boolean"/>
+        <!-- Round the top-end edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopEnd" format="boolean"/>
+        <!-- Round the bottom-start edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomStart" format="boolean"/>
+        <!-- Round the bottom-end edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomEnd" format="boolean"/>
+        <!-- Round by overlying color. -->
+        <attr name="roundWithOverlayColor" format="color"/>
+        <!-- Rounding border width-->
+        <attr name="roundingBorderWidth" format="dimension"/>
+        <!-- Rounding border color -->
+        <attr name="roundingBorderColor" format="color|reference"/>
+        <!-- Rounding border padding -->
+        <attr name="roundingBorderPadding" format="dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SimpleDraweeView" parent="GenericDraweeHierarchy">
+
+        <!-- An image uri . -->
+        <attr name="actualImageUri" format="string"/>
+        <!-- An image reference -->
+        <attr name="actualImageResource" format="reference"/>
+
+        <!-- Attributes inherited from GenericDraweeHierarchy -->
+        <eat-comment />
+
+        <!-- Fade duration in milliseconds. -->
+        <attr name="fadeDuration" />
+
+        <!-- Aspect ratio (width / height) of the view, not necessarily of the images. -->
+        <attr name="viewAspectRatio" />
+
+        <!-- Image branches -
+        Scale-type values must match those in GenericDraweeHierarchyInflater.getScaleTypeFromXml.
+        (GenericDraweeHierarchyInflater.java).
+        For drawables that should not be scaled, such as those with the android:tileMode
+        attribute set, use the value 'none'. -->
+
+        <!-- A drawable or color to be be used as a placeholder. -->
+        <attr name="placeholderImage" />
+        <!-- Scale type of the placeholder image. Ignored if placeholderImage is not specified. -->
+        <attr name="placeholderImageScaleType" />
+
+        <!-- A drawable to be be used as a retry image. -->
+        <attr name="retryImage" />
+        <!-- Scale type of the retry image. Ignored if retryImage is not specified. -->
+        <attr name="retryImageScaleType" />
+
+        <!-- A drawable to be be used as a failure image. -->
+        <attr name="failureImage" />
+        <!-- Scale type of the failure image. Ignored if failureImage is not specified. -->
+        <attr name="failureImageScaleType" />
+
+
+        <!-- A drawable to be be used as a progress bar. -->
+        <attr name="progressBarImage" />
+        <!-- Scale type of the progress bar. Ignored if progressBarImage is not specified. -->
+        <attr name="progressBarImageScaleType" />
+
+        <!-- Progress bar Auto Rotate interval in milliseconds -->
+        <attr name="progressBarAutoRotateInterval" />
+
+        <!-- Scale type of the actual image. -->
+        <attr name="actualImageScaleType" />
+
+        <!-- A drawable or color to be used as a background. -->
+        <attr name="backgroundImage" />
+
+        <!-- A drawable or color to be used as an overlay. -->
+        <attr name="overlayImage" />
+
+        <!-- A drawable or color to be used as a pressed-state-overlay -->
+        <attr name="pressedStateOverlayImage" />
+
+        <!-- Rounding params -
+        Declares attributes for rounding shape, mode and border. -->
+
+        <!-- Round as circle. -->
+        <attr name="roundAsCircle" />
+        <!-- Rounded corner radius. Ignored if roundAsCircle is used. -->
+        <attr name="roundedCornerRadius" />
+        <!-- Round the top-left corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopLeft" />
+        <!-- Round the top-right corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopRight" />
+        <!-- Round the bottom-right corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomRight" />
+        <!-- Round the bottom-left corner. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomLeft" />
+        <!-- Round the top-start edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopStart" />
+        <!-- Round the top-end edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundTopEnd" />
+        <!-- Round the bottom-start edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomStart" />
+        <!-- Round the bottom-end edge. Ignored if roundAsCircle is used. -->
+        <attr name="roundBottomEnd" />
+        <!-- Round by overlying color. -->
+        <attr name="roundWithOverlayColor" />
+        <!-- Rounding border width-->
+        <attr name="roundingBorderWidth" />
+        <!-- Rounding border color -->
+        <attr name="roundingBorderColor" />
+        <!-- Rounding border padding -->
+        <attr name="roundingBorderPadding" />
+
+    </declare-styleable>
+
+    <!--Country Picker-->
+    <declare-styleable name="CountryCodePicker">
+        <!--{@deprecated Use defaultNameCode instead.}-->
+        <attr name="ccp_defaultPhoneCode" format="integer" />
+        <attr name="ccp_contentColor" format="color" />
+        <attr name="ccp_arrowColor" format="color" />
+        <attr name="ccp_textSize" format="dimension" />
+        <attr name="ccp_arrowSize" format="dimension" />
+        <attr name="ccp_customMasterCountries" format="string" />
+        <attr name="ccp_excludedCountries" format="string" />
+        <attr name="ccp_flagBorderColor" format="color" />
+        <attr name="ccp_countryPreference" format="string" />
+        <attr name="ccp_defaultNameCode" format="string" />
+        <attr name="ccp_selectionMemoryTag" format="string" />
+        <attr name="ccp_useFlagEmoji" format="boolean" /> <!-- beta -->
+        <attr name="ccp_useDummyEmojiForPreview" format="boolean" /> <!-- beta -->
+
+        <attr name="ccp_textGravity" format="enum">
+            <enum name="LEFT" value="-1" />
+            <enum name="RIGHT" value="1" />
+            <enum name="CENTER" value="0" />
+        </attr>
+        <attr name="ccp_hintExampleNumberType" format="enum">
+            <enum name="MOBILE" value="0" />
+            <enum name="FIXED_LINE" value="1" />
+            <enum name="FIXED_LINE_OR_MOBILE" value="2" />
+            <enum name="TOLL_FREE" value="3" />
+            <enum name="PREMIUM_RATE" value="4" />
+            <enum name="SHARED_COST" value="5" />
+            <enum name="VOIP" value="6" />
+            <enum name="PERSONAL_NUMBER" value="7" />
+            <enum name="PAGER" value="8" />
+            <enum name="UAN" value="9" />
+            <enum name="VOICEMAIL" value="10" />
+            <enum name="UNKNOWN" value="11" />
+
+        </attr>
+
+
+        <!--CCP dimension properties-->
+        <attr name="ccp_padding" format="dimension" />
+
+        <!--CCP bool properties-->
+        <attr name="ccp_showNameCode" format="boolean" />
+        <attr name="ccp_showFlag" format="boolean" />
+        <attr name="ccp_showFullName" format="boolean" />
+        <attr name="ccp_internationalFormattingOnly" format="boolean" />
+        <attr name="ccp_clickable" format="boolean" />
+        <attr name="ccp_showPhoneCode" format="boolean" />
+        <attr name="ccp_autoDetectLanguage" format="boolean" />
+        <attr name="ccp_autoDetectCountry" format="boolean" />
+        <attr name="ccp_areaCodeDetectedCountry" format="boolean" />
+        <attr name="ccp_autoFormatNumber" format="boolean" />
+        <attr name="ccp_hintExampleNumber" format="boolean" />
+        <attr name="ccp_rememberLastSelection" format="boolean" />
+        <attr name="ccp_showArrow" format="boolean" />
+
+        <!--CCP Dialog properties-->
+        <attr name="ccpDialog_keyboardAutoPopup" format="boolean" />
+        <attr name="ccpDialog_allowSearch" format="boolean" />
+        <attr name="ccpDialog_showPhoneCode" format="boolean" />
+        <attr name="ccpDialog_showNameCode" format="boolean" />
+        <attr name="ccpDialog_showFlag" format="boolean" />
+        <attr name="ccpDialog_showFastScroller" format="boolean" />
+        <attr name="ccpDialog_fastScroller_bubbleColor" format="color" />
+        <attr name="ccpDialog_fastScroller_handleColor" format="color" />
+        <attr name="ccpDialog_fastScroller_bubbleTextAppearance" format="reference" />
+        <attr name="ccpDialog_backgroundColor" format="reference" />
+        <attr name="ccpDialog_background" format="reference" />
+        <attr name="ccpDialog_textColor" format="color" />
+        <attr name="ccpDialog_searchEditTextTint" format="color" />
+        <attr name="ccpDialog_showCloseIcon" format="boolean" />
+        <attr name="ccpDialog_showTitle" format="boolean" />
+        <attr name="ccpDialog_initialScrollToSelection" format="boolean" />
+        <!--list of languages-->
+        <!--Make sure: order in this list must match order of Language Enum in CountryCodePicker.java. Values must be ascending starting from 0.-->
+        <attr name="ccp_defaultLanguage" format="enum">
+            <enum name="AFRIKAANS" value="0" />
+            <enum name="ARABIC" value="1" />
+            <enum name="BENGALI" value="2" />
+            <enum name="CHINESE_SIMPLIFIED" value="3" />
+            <enum name="CHINESE_TRADITIONAL" value="4" />
+            <enum name="CZECH" value="5" />
+            <enum name="DANISH" value="6" />
+            <enum name="DUTCH" value="7" />
+            <enum name="ENGLISH" value="8" />
+            <enum name="FARSI" value="9" />
+            <enum name="FRENCH" value="10" />
+            <enum name="GERMAN" value="11" />
+            <enum name="GREEK" value="12" />
+            <enum name="GUJARATI" value="13" />
+            <enum name="HEBREW" value="14" />
+            <enum name="HINDI" value="15" />
+            <enum name="INDONESIA" value="16" />
+            <enum name="ITALIAN" value="17" />
+            <enum name="JAPANESE" value="18" />
+            <enum name="KAZAKH" value="19" />
+            <enum name="KOREAN" value="20" />
+            <enum name="MARATHI" value="21"/>
+            <enum name="POLISH" value="22" />
+            <enum name="PORTUGUESE" value="23" />
+            <enum name="PUNJABI" value="24" />
+            <enum name="RUSSIAN" value="25" />
+            <enum name="SLOVAK" value="26" />
+            <enum name="SLOVENIAN" value="27" />
+            <enum name="SPANISH" value="28" />
+            <enum name="SWEDISH" value="29" />
+            <enum name="TURKISH" value="30" />
+            <enum name="UKRAINIAN" value="31" />
+            <enum name="URDU" value="32" />
+            <enum name="UZBEK" value="33" />
+            <enum name="VIETNAMESE" value="34" />
+        </attr>
+
+        <attr name="ccp_countryAutoDetectionPref" format="enum">
+            <enum name="SIM_ONLY" value="1" />
+            <enum name="NETWORK_ONLY" value="2" />
+            <enum name="LOCALE_ONLY" value="3" />
+            <enum name="SIM_NETWORK" value="12" />
+            <enum name="NETWORK_SIM" value="21" />
+            <enum name="SIM_LOCALE" value="13" />
+            <enum name="LOCALE_SIM" value="31" />
+            <enum name="NETWORK_LOCALE" value="23" />
+            <enum name="LOCALE_NETWORK" value="32" />
+            <enum name="SIM_NETWORK_LOCALE" value="123" />
+            <enum name="SIM_LOCALE_NETWORK" value="132" />
+            <enum name="NETWORK_SIM_LOCALE" value="213" />
+            <enum name="NETWORK_LOCALE_SIM" value="231" />
+            <enum name="LOCALE_SIM_NETWORK" value="312" />
+            <enum name="LOCALE_NETWORK_SIM" value="321" />
+        </attr>
+    </declare-styleable>
+    <!--Fast Scroller-->
+    <attr name="fastscroll__style" format="reference" />
+    <declare-styleable name="fastscroll__fastScroller">
+        <attr name="fastscroll__bubbleColor" format="color" />
+        <attr name="fastscroll__handleColor" format="color" />
+        <attr name="fastscroll__bubbleTextAppearance" format="reference" />
+    </declare-styleable>
+
+    <!--Floating Action Menu-->
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorPressed" format="color"/>
+        <attr name="fab_colorDisabled" format="color"/>
+        <attr name="fab_colorNormal" format="color"/>
+        <attr name="fab_icon" format="reference"/>
+        <attr name="fab_size" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="fab_title" format="string"/>
+        <attr name="fab_stroke_visible" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="AddFloatingActionButton">
+        <attr name="fab_plusIconColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="FloatingActionsMenu">
+        <attr name="fab_addButtonColorPressed" format="color"/>
+        <attr name="fab_addButtonColorNormal" format="color"/>
+        <attr name="fab_addButtonSize" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="fab_addButtonPlusIconColor" format="color"/>
+        <attr name="fab_addButtonStrokeVisible" format="boolean"/>
+        <attr name="fab_labelStyle" format="reference"/>
+        <attr name="fab_labelsPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="fab_expandDirection" format="enum">
+            <enum name="up" value="0"/>
+            <enum name="down" value="1"/>
+            <enum name="left" value="2"/>
+            <enum name="right" value="3"/>
+        </attr>
+    </declare-styleable>
+    <!--<declare-styleable name="FloatingActionMenu">
+        <attr name="menu_showShadow" format="boolean" />
+        <attr name="menu_buttonSpacing" format="dimension" />
+        <attr name="menu_labels_margin" format="dimension" />
+        <attr name="menu_labels_showAnimation" format="reference" />
+        <attr name="menu_labels_hideAnimation" format="reference" />
+        <attr name="menu_labels_paddingTop" format="dimension" />
+        <attr name="menu_labels_paddingLeft" format="dimension" />
+        <attr name="menu_labels_paddingRight" format="dimension" />
+        <attr name="menu_labels_paddingBottom" format="dimension" />
+        <attr name="menu_labels_padding" format="dimension" />
+        <attr name="menu_labels_textColor" format="reference|color" />
+        <attr name="menu_labels_textSize" format="dimension" />
+        <attr name="menu_labels_cornerRadius" format="dimension" />
+        <attr name="menu_labels_showShadow" format="boolean" />
+        <attr name="menu_labels_colorNormal" format="color" />
+        <attr name="menu_labels_colorPressed" format="color" />
+        <attr name="menu_labels_colorRipple" format="color" />
+        <attr name="menu_labels_position" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="menu_icon" format="reference" />
+        <attr name="menu_animationDelayPerItem" format="integer" />
+        <attr name="menu_buttonToggleAnimation" format="reference" />
+        <attr name="menu_labels_singleLine" format="boolean" />
+        <attr name="menu_labels_ellipsize" format="enum">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+        </attr>
+        <attr name="menu_labels_maxLines" format="integer" />
+        <attr name="menu_fab_size" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+        <attr name="menu_labels_style" format="reference" />
+        <attr name="menu_labels_customFont" format="string" />
+        <attr name="menu_shadowColor" format="color" />
+        <attr name="menu_shadowRadius" format="dimension" />
+        <attr name="menu_shadowXOffset" format="dimension" />
+        <attr name="menu_shadowYOffset" format="dimension" />
+        <attr name="menu_colorNormal" format="color" />
+        <attr name="menu_colorPressed" format="color" />
+        <attr name="menu_colorRipple" format="color" />
+        <attr name="menu_openDirection" format="enum">
+            <enum name="up" value="0" />
+            <enum name="down" value="1" />
+        </attr>
+        <attr name="menu_backgroundColor" format="color" />
+        <attr name="menu_fab_label" format="string" />
+        <attr name="menu_fab_show_animation" format="reference" />
+        <attr name="menu_fab_hide_animation" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionButton2">
+        <attr name="fab_colorNormal" format="color" />
+        <attr name="fab_colorPressed" format="color" />
+        <attr name="fab_colorDisabled" format="color" />
+        <attr name="fab_colorRipple" format="color" />
+        <attr name="fab_showShadow" format="boolean" />
+        <attr name="fab_shadowColor" format="color" />
+        <attr name="fab_shadowRadius" format="dimension" />
+        <attr name="fab_shadowXOffset" format="dimension" />
+        <attr name="fab_shadowYOffset" format="dimension" />
+        <attr name="fab_size" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+        <attr name="fab_showAnimation" format="reference" />
+        <attr name="fab_hideAnimation" format="reference" />
+        <attr name="fab_label" format="string" />
+        <attr name="fab_elevationCompat" format="dimension" />
+        <attr name="fab_progress_color" format="color" />
+        <attr name="fab_progress_backgroundColor" format="color" />
+        <attr name="fab_progress_indeterminate" format="boolean" />
+        <attr name="fab_progress_max" format="integer" />
+        <attr name="fab_progress" format="integer" />
+        <attr name="fab_progress_showBackground" format="boolean" />
+    </declare-styleable>-->
+    <!-- Common attributes -->
+    <attr name="corner_radius" format="float" />
+    <attr name="min_value" format="float" />
+    <attr name="max_value" format="float" />
+    <attr name="min_start_value" format="float" />
+    <attr name="max_start_value" format="float" />
+    <attr name="steps" format="float" />
+    <attr name="gap" format="float" />
+    <attr name="fix_gap" format="float" />
+    <attr name="bar_color_mode" format="enum">
+        <enum name="solid" value="0" />
+        <enum name="gradient" value="1" />
+    </attr>
+    <attr name="bar_color" format="color" />
+    <attr name="bar_gradient_start" format="color" />
+    <attr name="bar_gradient_end" format="color" />
+    <attr name="bar_highlight_color_mode" format="enum">
+        <enum name="solid" value="0" />
+        <enum name="gradient" value="1" />
+    </attr>
+    <attr name="bar_highlight_color" format="color" />
+    <attr name="bar_highlight_gradient_start" format="color" />
+    <attr name="bar_highlight_gradient_end" format="color" />
+    <attr name="thumb_diameter" format="dimension"/>
+    <attr name="position" format="enum">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="data_type" format="enum">
+        <enum name="_long" value="0" />
+        <enum name="_double" value="1" />
+        <enum name="_integer" value="2" />
+        <enum name="_float" value="3" />
+        <enum name="_short" value="4" />
+        <enum name="_byte" value="5" />
+    </attr>
+    <attr name="bar_height" format="dimension"/>
+    <attr name="seek_bar_touch_enabled" format="boolean" />
+
+    <!-- Seekbar -->
+    <declare-styleable name="CrystalSeekbar" >
+        <attr name="corner_radius" />
+        <attr name="min_value" />
+        <attr name="max_value" />
+        <attr name="min_start_value" />
+        <attr name="max_start_value" />
+        <attr name="steps" />
+        <attr name="gap" />
+        <attr name="fix_gap" />
+        <attr name="bar_height" />
+        <attr name="bar_color_mode" />
+        <attr name="bar_color" />
+        <attr name="bar_gradient_start" />
+        <attr name="bar_gradient_end" />
+        <attr name="bar_highlight_color_mode" />
+        <attr name="bar_highlight_color" />
+        <attr name="bar_highlight_gradient_start" />
+        <attr name="bar_highlight_gradient_end" />
+        <attr name="thumb_diameter" />
+        <attr name="position" />
+        <attr name="data_type" />
+        <attr name="thumb_color" format="color" />
+        <attr name="thumb_color_pressed" format="color" />
+        <attr name="thumb_image" format="reference" />
+        <attr name="thumb_image_pressed" format="reference" />
+        <attr name="seek_bar_touch_enabled" />
+    </declare-styleable>
+
+    <!-- Range Seekbar -->
+    <declare-styleable name="CrystalRangeSeekbar" >
+        <attr name="corner_radius" />
+        <attr name="min_value" />
+        <attr name="max_value" />
+        <attr name="min_start_value" />
+        <attr name="max_start_value" />
+        <attr name="steps" />
+        <attr name="gap" />
+        <attr name="fix_gap" />
+        <attr name="bar_height"/>
+        <attr name="bar_color_mode" />
+        <attr name="bar_color" />
+        <attr name="bar_gradient_start" />
+        <attr name="bar_gradient_end" />
+        <attr name="bar_highlight_color_mode" />
+        <attr name="bar_highlight_color" />
+        <attr name="bar_highlight_gradient_start" />
+        <attr name="bar_highlight_gradient_end" />
+        <attr name="thumb_diameter" />
+        <attr name="position" />
+        <attr name="data_type" />
+        <attr name="left_thumb_color" format="color" />
+        <attr name="left_thumb_color_pressed" format="color" />
+        <attr name="left_thumb_image" format="reference" />
+        <attr name="left_thumb_image_pressed" format="reference" />
+        <attr name="right_thumb_color" format="color" />
+        <attr name="right_thumb_color_pressed" format="color" />
+        <attr name="right_thumb_image" format="reference" />
+        <attr name="right_thumb_image_pressed" format="reference" />
+        <attr name="seek_bar_touch_enabled" />
+    </declare-styleable>
+
+    <!--tracking widget-->
+    <declare-styleable name="TimelineView" >
+        <attr name="markerColor" format="color|reference"/>
+        <attr name="lineColor" format="color|reference"/>
+        <attr name="markerSize" format="dimension"/>
+        <attr name="markerStrokeWidth" format="dimension"/>
+        <attr name="markerActiveColor" format="color|reference"/>
+        <attr name="markerActiveStrokeWidth" format="dimension"/>
+        <attr name="lineSize" format="dimension"/>
+        <attr name="markerTextSize" format="dimension"/>
+        <attr name="markerTextColor" format="color|reference"/>
+        <attr name="markerActive" format="boolean"/>
+        <attr name="lineOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="selectedColor" format="color"/>
+        <attr name="deselectedColor" format="color"/>
+        <attr name="selectedDrawable" format="reference" />
+        <attr name="deselectedDrawable" format="reference"/>
+        <attr name="indicatorSpacing" format="dimension"/>
+        <attr name="enableAnimation" format="boolean"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="animationScale" format="float"/>
+        <attr name="backgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CarouselView">
+        <attr name="carouselMode" format="enum">
+            <enum name="snap" value="0"/>
+            <enum name="preview" value="1"/>
+        </attr>
+        <attr name="carouselPreviewSide" format="enum">
+            <enum name="sides" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="carouselPreviewSideBySideStyle" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="scale" value="1"/>
+        </attr>
+        <attr name="carouselPreviewScaleFactor" format="float"/>
+        <attr name="carouselPreviewOffset" format="dimension"/>
+        <attr name="carouselMargin" format="dimension"/>
+    </declare-styleable>
+
+    <!--indicator-->
+    <attr name="indicatorColor" format="color"/>
+    <attr name="indicatorSelectedColor" format="color"/>
+    <attr name="indicatorGap" format="dimension"/>
+    <attr name="indicatorItemCount" format="integer"/>
+    <attr name="indicatorCornerRadius" format="dimension"/>
+
+    <declare-styleable name="CircleIndicator">
+        <attr name="indicatorColor"/>
+        <attr name="indicatorSelectedColor"/>
+        <attr name="indicatorGap"/>
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorItemCount"/>
+    </declare-styleable>
+
+    <declare-styleable name="RectIndicator">
+        <attr name="indicatorColor"/>
+        <attr name="indicatorSelectedColor"/>
+        <attr name="indicatorGap"/>
+        <attr name="indicatorItemCount"/>
+        <attr name="indicatorCornerRadius"/>
+        <attr name="indicatorWidth" format="dimension"/>
+        <attr name="indicatorHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="StoriesProgressView">
+        <attr name="progressCount" format="integer|reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SegmentedProgressBar">
+        <attr name="gap_sizee" format="dimension" />
+        <attr name="corner_radiuss" format="dimension" />
+        <attr name="segment_countt" format="integer" />
+        <attr name="fill_colorr" format="color" />
+        <attr name="container_colorr" format="color" />
+    </declare-styleable>
+</resources>

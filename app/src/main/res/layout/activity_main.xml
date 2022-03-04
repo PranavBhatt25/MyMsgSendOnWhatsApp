@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andoid.mymsgsendonwhatsapp.ManActivity">
+
+
+    <com.andoid.mymsgsendonwhatsapp.hbb20.CountryCodePicker
+        android:id="@+id/code_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.35"
+        app:ccpDialog_keyboardAutoPopup="false"
+        app:ccp_autoDetectCountry="true"
+        app:ccp_hintExampleNumber="true"
+        app:ccp_textSize="@dimen/text_size_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/actEtMobileNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:hint="@string/please_enter_phone_number"
+        android:imeOptions="actionNext"
+        android:inputType="phone"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:textColor="@color/dark_greay"
+        android:textSize="@dimen/_11ssp"
+        app:hintTextAppearance="@style/EditTextHint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/code_picker"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/actEtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="top"
+        android:hint="@string/please_enter_message"
+        android:imeOptions="actionDone"
+        android:lines="5"
+        android:maxLines="5"
+        android:textColor="@color/dark_greay"
+        android:textSize="@dimen/_11ssp"
+        app:hintTextAppearance="@style/EditTextHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actEtMobileNo" />
+
+
+    <Button
+        android:id="@+id/actBtnSend"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30ssp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_30ssp"
+        android:background="@drawable/login_rounded_shadow_app_color"
+        android:text="@string/send_your_message"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actEtDescription" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
